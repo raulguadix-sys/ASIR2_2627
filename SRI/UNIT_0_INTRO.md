@@ -9,6 +9,7 @@ Interfaz en adaptador solo-anfitrión enp0s8 (IP 172.168.5.140).
 sudo apt update y sudo apt upgrade
 ```
 Se actualizan los índices de paquetes del sistema operativo. El sistema indica que no hay actualizaciones pendientes instalables por políticas de phasing.
+
 ```
 sudo apt install openssh-server 
 ```
