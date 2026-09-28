@@ -46,8 +46,9 @@ Autenticación en GitHub CLI: Tras cancelar un primer intento, se reintenta el c
 Creación e inicialización del repositorio local:
 Se crea el directorio de trabajo con
 ```
-mkdir ASIR2_2627 y se entra en él
+mkdir ASIR2_2627 
 ```
+y se entra en él
 ```
 cd ASIR2_2627
 ```
@@ -67,9 +68,10 @@ git config --global user.email "raulguadix@gmail.com"
 
 Creación exitosa del commit: Se ejecuta nuevamente
 ```
-git commit -m "Primer commit", registrando los cambios en la rama master.
+git commit -m "Primer commit"
 ```
-Intento fallido de creación del repositorio remoto: Se ejecuta
+, registrando los cambios en la rama master.
+Creación del repositorio remoto: Se ejecuta
 ```
 gh repo create ASIR2_2627 --public --source=. --remote=origin --push
 ```
