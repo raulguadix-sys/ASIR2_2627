@@ -9,12 +9,15 @@ Interfaz en adaptador solo-anfitrión enp0s8 (IP 192.168.56.101).
 sudo apt update y sudo apt upgrade
 ```
 Se actualizan los índices de paquetes del sistema operativo. El sistema indica que no hay actualizaciones pendientes instalables por políticas de phasing.
-
-Instalación de SSH (sudo apt install openssh-server): Se solicita la instalación del servidor SSH en Ubuntu.
+```yaml
+sudo apt install openssh-server 
+```
+Se solicita la instalación del servidor SSH en Ubuntu.
 Confirmación e instalación: Se aceptan las dependencias necesarias (ncurses-term, openssh-sftp-server, ssh-import-id) y se realiza la descarga y configuración de los paquetes del servidor OpenSSH.
-
-Verificación de estado (sudo systemctl status ssh): Se revisa el servicio SSH, que figura como inactivo (inactive (dead)) y deshabilitado (disabled).
-Error de sintaxis (sudo systemctl enable): Ocurre un error por falta de argumentos (Too few arguments) al omitir el nombre del servicio.
+```
+sudo systemctl status ssh
+```
+Se revisa el servicio SSH, que figura como inactivo (inactive (dead)) y deshabilitado (disabled).
 Habilitación e inicio (sudo systemctl enable --now ssh): Se activa el servicio SSH para que se inicie automáticamente en el arranque y se pone en marcha de forma inmediata.
 
 Conexión remota por SSH: Desde la consola de Windows, se establece conexión SSH hacia la máquina virtual ejecutando ssh raul@192.168.56.101.
