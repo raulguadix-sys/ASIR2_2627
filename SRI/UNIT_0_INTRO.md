@@ -1,4 +1,7 @@
-Comprobación de red (ip a): Se consultan las interfaces de red del sistema Ubuntu. Se observa la interfaz del bucle local (lo), la interfaz de red NAT enp0s3 (IP 10.0.2.15), y una interfaz en adaptador solo-anfitrión enp0s8 (IP 192.168.56.101).
+```yaml
+ip a
+```
+: Se consultan las interfaces de red del sistema Ubuntu. Se observa la interfaz del bucle local (lo), la interfaz de red NAT enp0s3 (IP 10.0.2.15), y una interfaz en adaptador solo-anfitrión enp0s8 (IP 192.168.56.101).
 Actualización del sistema (sudo apt update y sudo apt upgrade): Se actualizan los índices de paquetes del sistema operativo. El sistema indica que no hay actualizaciones pendientes instalables por políticas de phasing.
 
 Instalación de SSH (sudo apt install openssh-server): Se solicita la instalación del servidor SSH en Ubuntu.
