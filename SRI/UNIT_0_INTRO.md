@@ -75,5 +75,5 @@ Creación del repositorio remoto: Se ejecuta
 ```
 gh repo create ASIR2_2627 --public --source=. --remote=origin --push
 ```
-´´´
+
 Resultado: Se crea con éxito el repositorio público raulguadix-sys/ASIR2_2627 en GitHub, se vincula el origen remoto origin y se sube el código local mediante el push inicial de la rama master.
