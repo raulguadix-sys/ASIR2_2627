@@ -107,7 +107,7 @@ Desde Windows PowerShell:
 ssh raul@172.16.5.140
 ```
 Si todo está correctamente configurado, se entra directamente al servidor:
-
+```
 raul@raul-VirtualBox:~$
-
+```
 sin introducir la contraseña del usuario raul.
