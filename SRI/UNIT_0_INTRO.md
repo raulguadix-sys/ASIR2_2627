@@ -1,15 +1,15 @@
-```yaml
+```
 ip a
 ```
 Se consultan las interfaces de red del sistema Ubuntu. 
 Interfaz del bucle local (lo) (127.0.0.1).
 Interfaz de red NAT enp0s3 (IP 10.0.2.15). 
-Interfaz en adaptador solo-anfitrión enp0s8 (IP 192.168.56.101).
-```yaml
+Interfaz en adaptador solo-anfitrión enp0s8 (IP 172.168.5.140).
+```
 sudo apt update y sudo apt upgrade
 ```
 Se actualizan los índices de paquetes del sistema operativo. El sistema indica que no hay actualizaciones pendientes instalables por políticas de phasing.
-```yaml
+```
 sudo apt install openssh-server 
 ```
 Se solicita la instalación del servidor SSH en Ubuntu.
@@ -18,9 +18,15 @@ Confirmación e instalación: Se aceptan las dependencias necesarias (ncurses-te
 sudo systemctl status ssh
 ```
 Se revisa el servicio SSH, que figura como inactivo (inactive (dead)) y deshabilitado (disabled).
-Habilitación e inicio (sudo systemctl enable --now ssh): Se activa el servicio SSH para que se inicie automáticamente en el arranque y se pone en marcha de forma inmediata.
+```
+sudo systemctl enable --now ssh
+```
+Se activa el servicio SSH para que se inicie automáticamente en el arranque y se pone en marcha de forma inmediata.
 
-Conexión remota por SSH: Desde la consola de Windows, se establece conexión SSH hacia la máquina virtual ejecutando ssh raul@192.168.56.101.
+Conexión remota por SSH: Desde la consola de Windows, se establece conexión SSH hacia la máquina virtual ejecutando
+```
+ssh raul@192.168.56.101
+```
 Aceptación de la huella digital: Se confirma la autenticidad del host escribiendo yes para añadir la clave ED25519 al archivo known_hosts de Windows e introduciendo la contraseña del usuario.
 Acceso y comprobación de repositorios: Una vez dentro de la sesión de Ubuntu vía SSH, se ejecutan sudo apt update y sudo apt upgrade.
 Instalación de Git y GitHub CLI (sudo apt install git gh): Se inicia la instalación de Git junto con la herramienta de consola de GitHub (gh).
