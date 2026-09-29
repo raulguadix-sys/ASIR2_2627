@@ -37,5 +37,7 @@ sudo chmod 600 /etc/netplan/cloud50-init.yaml
 sudo netplan apply
 ```
 # 3. Verificar IP recibida y probar conexión
+```
 ip a
 ping 192.168.1.1
+```
