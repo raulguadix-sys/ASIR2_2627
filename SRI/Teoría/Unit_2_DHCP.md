@@ -1,43 +1,37 @@
 SERVIDOR
-# 1. Identificar interfaz de red (ej. enp0s3)
+
+1. Identificar interfaz de red y su IP estática (enp0s3 -> 172.16.5.140/24)
 ```
 ip a
 ```
-# 2. Configurar IP estática (192.168.1.1/24)
-```
-sudo nano /etc/netplan/50-cloud-init.yaml
-sudo chmod 600 /etc/netplan/50-cloud-init.yaml
-sudo netplan apply
-```
-# 3. Instalar servidor DHCP
-```
-sudo apt update && sudo apt install isc-dhcp-server -y
-```
-# 4. Asignar interfaz de escucha en INTERFACESv4="enp0s3"
+2. Configurar la interfaz de escucha en INTERFACESv4="enp0s3"
 ```
 sudo nano /etc/default/isc-dhcp-server
 ```
-# 5. Definir el rango DHCP en subnet 192.168.1.0
+3. Configurar la subred (172.16.5.0/24) y el rango de emisión (172.16.5.150 a 172.16.5.200)
 ```
 sudo nano /etc/dhcp/dhcpd.conf
 ```
-# 6. Iniciar el servicio y comprobar concesiones
+4. Validar la sintaxis del archivo de configuración
+```
+sudo dhcpd -t -cf /etc/dhcp/dhcpd.conf
+```
+5. Reiniciar el servicio DHCP y comprobar su estado
 ```
 sudo systemctl restart isc-dhcp-server
-cat /var/lib/dhcp/dhcpd.leases
+sudo systemctl status isc-dhcp-server
 ```
 CLIENTE
-# 1. Configurar red para pedir IP por DHCP (dhcp4: true)
+
+1. Configurar la interfaz (enp0s3) para solicitar IP dinámica (dhcp4: true)
 ```
 sudo nano /etc/netplan/cloud50-init.yaml
-sudo chmod 600 /etc/netplan/cloud50-init.yaml
 ```
-# 2. Aplicar y solicitar IP al servidor
+2. Aplicar la configuración de red
 ```
 sudo netplan apply
 ```
-# 3. Verificar IP recibida y probar conexión
+3. Verificar la IP asignada por el servidor (172.16.5.151)
 ```
 ip a
-ping 192.168.1.1
 ```
