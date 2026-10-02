@@ -38,8 +38,9 @@ ip a
 ```
 
 WINDOWS y UBUNTU cliente
-Markdown
 WINDOWS SERVER 2022 Y UBUNTU CLIENTE
+
+
 SERVIDOR (WINDOWS SERVER 2022)
 
 1. Configurar la interfaz de red con IP estática (Ethernet -> 172.16.5.149/24)
