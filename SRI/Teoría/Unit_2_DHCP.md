@@ -19,8 +19,8 @@ sudo nano /etc/dhcp/dhcpd.conf
     range 172.16.5.150 172.16.5.200;
     default-lease-time 600;
     max-lease-time 7200;
-} 
-```
+   } 
+   ```
 5. Validar la sintaxis del archivo de configuración
 ```
 sudo dhcpd -t -cf /etc/dhcp/dhcpd.conf
