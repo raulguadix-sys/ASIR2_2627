@@ -13,11 +13,19 @@ sudo nano /etc/default/isc-dhcp-server
 ```
 sudo nano /etc/dhcp/dhcpd.conf
 ```
-4. Validar la sintaxis del archivo de configuración
+4. Dentro del archivo añadimos al final del todo la siguiente línea.
+   ```
+   subnet 172.16.5.0 netmask 255.255.255.0 {
+    range 172.16.5.150 172.16.5.200;
+    default-lease-time 600;
+    max-lease-time 7200;
+} 
+```
+5. Validar la sintaxis del archivo de configuración
 ```
 sudo dhcpd -t -cf /etc/dhcp/dhcpd.conf
 ```
-5. Reiniciar el servicio DHCP y comprobar su estado
+6. Reiniciar el servicio DHCP y comprobar su estado
 ```
 sudo systemctl restart isc-dhcp-server
 sudo systemctl status isc-dhcp-server
